@@ -116,6 +116,9 @@ h6 {
   padding-bottom: 100px;
 }
 
+.pl-100 {
+  padding-left: 110px !important;
+}
 .boxed-version {
   max-width: 1400px;
   margin: auto;
@@ -162,7 +165,7 @@ h6 {
 .wrapper {
   height: auto;
   max-width: 90%;
-//   min-width: 100%;
+  //   min-width: 100%;
   margin: 80px auto;
   border-radius: 20px;
   background-color: #f1f9fe;

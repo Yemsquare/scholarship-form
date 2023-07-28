@@ -7,7 +7,7 @@ class StepFour extends React.Component {
         <div className="inner pb-50">
           <div className="wizard-content-form">
             <div className="wizard-form-field">
-              <div className="my-5 text-left">
+              <div className="my-5 text-left px-0 mx-0">
                 <h2 className="wizard-title mb-2">References</h2>
                 <p>
                   References can be submitted by those very familiar with the
@@ -90,23 +90,19 @@ class StepFour extends React.Component {
                     <label>Letter of Reference</label>
                   </div>
 
-                  <div className="wizard-identity-box identity-upload text-center mb-3">
-                    <div className="upload-icon">
-                      <i className="fas fa-cloud-upload-alt"></i>
+                  <div className="upload-araa">
+                    <div className="upload-text float-left">
+                      <span>Signature</span>
                     </div>
-                    <div className="upload-option text-center">
-                      <label htmlFor="file-images">Reference Signature</label>
+                    <div className="upload-option text-center float-right">
+                      <label for="files">Upload Signature</label>
                       <input
-                        name="referee_signature_1"
-                        id="file-images"
-                        style={{ display: "none" }}
+                        id="files"
                         type="file"
-                        className="file-name"
-                        data-file-name="referee_signature_1"
+                        className="d-none"
+                        name="referee_signature_1"
+                        accept="image/jpg,image/png,image/jpeg"
                       />
-                      <span>
-                        .jpg or .pdf should be more than 500KB or 300PI
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -188,22 +184,19 @@ class StepFour extends React.Component {
                     <label>Letter of Reference</label>
                   </div>
 
-                  <div className="wizard-identity-box identity-upload text-center mb-3">
-                    <div className="upload-icon">
-                      <i className="fas fa-cloud-upload-alt"></i>
+                  <div className="upload-araa">
+                    <div className="upload-text float-left">
+                      <span>Signature</span>
                     </div>
-                    <div className="upload-option text-center">
-                      <label htmlFor="file-images">Reference Signature</label>
+                    <div className="upload-option text-center float-right">
+                      <label for="files">Upload Signature</label>
                       <input
-                        name="referee_signature_2"
-                        id="file-images"
-                        style={{ display: "none" }}
+                        id="files"
                         type="file"
-                        data-file-name="referee_signature_2"
+                        className="d-none"
+                        name="referee_signature_2"
+                        accept="image/jpg,image/png,image/jpeg"
                       />
-                      <span>
-                        .jpg or .pdf should be more than 500KB or 300PI
-                      </span>
                     </div>
                   </div>
                 </div>

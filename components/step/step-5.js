@@ -65,9 +65,8 @@ class StepFive extends React.Component {
                       <input
                         name="transcript"
                         id="file-images"
-                        style={{ display: "none" }}
                         type="file"
-                        className="file-image"
+                        className="d-none file-image"
                         data-file-name="transcript"
                       />
                       <span>

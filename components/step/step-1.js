@@ -9,7 +9,7 @@ class StepOne extends React.Component {
       >
         <div className="inner pb-50">
           <div className="mb-5 text-left">
-            <h2 className="wizard-title">Applicant Data</h2>
+            <h2 className="wizard-title pl-100">Applicant Data</h2>
           </div>
           <div className="wizard-content-form">
             <div className="wizard-form-field">
@@ -93,7 +93,7 @@ class StepOne extends React.Component {
                       <input
                         name="applicant_photo"
                         id="file-images"
-                        style={{ display: "none" }}
+                        className="d-none"
                         type="file"
                       />
                       <span>

@@ -36,7 +36,7 @@
 
 .wizard-title {
   padding-top: 0;
-  padding-left: 100px;
+  padding-left: 0;
   color: $color-primary;
   font-weight: 600;
   font-size: 24px;
@@ -305,6 +305,12 @@
     }
   }
 
+  .has-float-label {
+    label {
+      font-size: 1rem;
+    }
+  }
+
   select {
     @extend input;
     height: 80px !important;
@@ -329,6 +335,8 @@
     height: 150px;
     background-color: #ddeef9;
     margin-bottom: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
   }
 
   .identity-upload {
@@ -338,6 +346,68 @@
       color: #7e7e8e;
       font-size: 55px;
       margin-bottom: 10px;
+    }
+  }
+
+  ul {
+    padding: 0px -15px;
+  }
+
+  li {
+    width: 45%;
+    height: 60px;
+    color: $color-primary;
+    font-size: 1.2rem;
+    // line-height: 80px;
+    font-weight: 500;
+    position: relative;
+    padding: 30px 60px 25px;
+    margin-bottom: 30px;
+    display: inline-block;
+    border: 2px solid #c3e8ff;
+    display: flex;
+    align-items: center;
+
+    + li {
+      margin-inline: 15px;
+    }
+
+    .identity-label {
+      display: block;
+    }
+
+    .checkmark-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        left: 30px;
+        top: 18px;
+        background-color: #fff;
+        border: 2px solid #c3e8ff;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        display: none;
+        border-radius: 100%;
+        left: 34px;
+        top: 22px;
+        background-color: #624cf9;
+      }
+    }
+
+    .identity-check:checked ~ .checkmark-border:after {
+      display: block;
     }
   }
 
@@ -352,6 +422,45 @@
     span {
       display: block;
       color: #7e7e8e;
+    }
+  }
+
+  .upload-araa {
+    width: 50%;
+    height: 60px;
+    margin: 20px 0px 20px;
+    display: inline-block;
+    border-top: 2px solid #c3e8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-top: 100px;
+
+    .upload-text {
+      span {
+        display: inline-block;
+        padding: 20px 15px;
+        color: $color-primary;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: none;
+      }
+    }
+
+    .upload-option {
+      // border: 2px solid #c3e8ff;
+      padding: 10px 20px;
+      position: relative;
+      top: 1px;
+      right: 12px;
+
+      label {
+        margin-bottom: 0;
+        color: $color-primary;
+        font-size: 1rem;
+        font-weight: 500;
+      }
     }
   }
 }
@@ -530,7 +639,7 @@
 
 .wizard-identity-box {
   //   box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.16);
-  background-color:#ddeef9;
+  background-color: #ddeef9;
 
   .wizard-identity-icon {
     img {
