@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
 
-class StepOne extends React.Component {
+class StepOne extends Component {
+
+  
   render() {
+
+    const { formData, handleChange, handlePhotoChange } = this.props;
+
     return (
       <div
         className="multisteps-form__panel js-active"
@@ -18,9 +23,11 @@ class StepOne extends React.Component {
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <input
                       type="text"
-                      name="applicant_name"
+                      name="name"
                       className="form-control"
                       placeholder="Applicant First, Middle and Last Name"
+                      value={formData.name}
+                      onChange={handleChange}
                     />
                     <label>Applicant First, Middle and Last Name</label>
                   </div>
@@ -28,8 +35,10 @@ class StepOne extends React.Component {
                     <input
                       type="email"
                       className="form-control"
-                      name="applicant_email"
+                      name="email"
                       placeholder="Applicant Email Address"
+                      value={formData.email}
+                      onChange={handleChange}
                     />
                     <label>Applicant Email Address</label>
                   </div>
@@ -37,8 +46,10 @@ class StepOne extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="applicant_year_class"
+                      name="yearClass"
                       placeholder="Applicant Academic Year and Class"
+                      value={formData.yearClass}
+                      onChange={handleChange}
                     />
                     <label>Applicant Academic Year and Class</label>
                   </div>
@@ -47,8 +58,10 @@ class StepOne extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="admission_no"
+                      name="admissionNo"
                       placeholder="Applicant Admission Number"
+                      value={formData.admissionNo}
+                      onChange={handleChange}
                     />
                     <label>Applicant Admission Number</label>
                   </div>
@@ -62,7 +75,9 @@ class StepOne extends React.Component {
                         <input
                           type="date"
                           className="form-control"
-                          name="applicant_dob"
+                          name="dateOfBirth"
+                          value={formData.dateOfBirth}
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -73,7 +88,9 @@ class StepOne extends React.Component {
                         <input
                           type="date"
                           className="form-control"
-                          name="application_date"
+                          name="applicationDate"
+                          value={formData.applicationDate}
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -91,10 +108,11 @@ class StepOne extends React.Component {
                         Applicant Passport Here
                       </label>
                       <input
-                        name="applicant_photo"
+                        name="applicantPhoto"
                         id="file-images"
                         className="d-none"
                         type="file"
+                        onChange={handlePhotoChange}
                       />
                       <span>
                         .jpg or .pdf should be more than 500KB or 300PI

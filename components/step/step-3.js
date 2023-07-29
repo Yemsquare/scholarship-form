@@ -2,6 +2,8 @@ import React from "react";
 
 class StepThree extends React.Component {
   render() {
+    const { formData, handleChange, handlePhotoChange } = this.props;
+
     return (
       <div className="multisteps-form__panel" data-animation="slideVert">
         <div className="inner pb-100">
@@ -25,9 +27,11 @@ class StepThree extends React.Component {
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <input
                       type="text"
-                      name="financial_need"
+                      name="guardianIncome"
                       className="form-control"
                       placeholder="Income of Parent/Guardian"
+                      value={formData.guardianIncome}
+                      onChange={handleChange}
                     />
                     <label>Income of Parent/Guardian</label>
                   </div>
@@ -46,11 +50,31 @@ class StepThree extends React.Component {
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
                       type="text"
-                      name="statement_of_need"
+                      name="applicantNeedStatment"
                       className="form-control"
                       placeholder="Write here"
+                      value={formData.applicantNeedStatement}
+                      onChange={handleChange}
                     ></textarea>
                     <label>Write here</label>
+                  </div>
+
+                  <div className="upload-araa">
+                    <div className="upload-text float-left">
+                      <span>Signature</span>
+                    </div>
+                    <div className="upload-option text-center float-right">
+                      <label htmlFor="files">Upload Signature</label>
+                      <input
+                        id="files"
+                        type="file"
+                        className="d-none"
+                        name="needSignature"
+                        accept="image/jpg,image/png,image/jpeg"
+                        // value={formData.needSignature}
+                        onChange={handlePhotoChange}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

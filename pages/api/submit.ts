@@ -3,20 +3,51 @@ import { google } from 'googleapis'
 
 type SheetForm = {
 
-
-      "applicant_name": string,
-      "applicant_email": string,
-      "applicant_year_class": string,
-      "admission_number": string,
-      "applicant_dob": string,
-      "application_date": Object,
-      "parent_guardian": Object,
-      "financialSummary": Object,
-      "references": Object,
-
-      miscellaneousInformation: Object,
-
-
+      name: String,
+      email: String,
+      dateOfBirth: String,
+      yearClass: String,
+      admissionNo: String,
+      applicationDate: String,
+      applicantPhoto: string,
+      guardian1Type: String,
+      guardian1Name: String,
+      guardian1DateOfBirth: String,
+      guardian1Occupation: String,
+      guardian1AddressPhone: String,
+      guardian1Signature: string,
+      guardian2Type: String,
+      guardian2Name: String,
+      guardian2DateOfBirth: String,
+      guardian2Occupation: String,
+      guardian2AddressPhone: String,
+      guardianEmail: String,
+      guardianIsAlumnus: String,
+      guardianAttendanceDate: String,
+      guardian2Signature: string,
+      guardianIncome: String,
+      applicantNeedStatement: String,
+      needSignature: string,
+      reference1Name: String,
+      reference1Relationship: String,
+      reference1Occupation: String,
+      reference1Address: String,
+      reference1PhoneNumber: String,
+      reference1PhoneEmail: String,
+      reference1Letter: String,
+      reference1Signature: String,
+      reference2Name: String,
+      reference2Relationship: String,
+      reference2Occupation: String,
+      reference2Address: String,
+      reference2PhoneNumber: String,
+      reference2PhoneEmail: String,
+      reference2Letter: String,
+      reference2Signature: string,
+      academicAwards: String,
+      prizeExtra: String,
+      commendation: String,
+      transcriptHistory: string,
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -49,6 +80,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                   version: 'v4'
             })
 
+            const values = Object.entries(body)
 
             const response = await sheet.spreadsheets.values.append({
                   spreadsheetId: process.env.GOOGLE_SHEET_ID,
@@ -57,9 +89,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                   requestBody: {
                         values: [
                               [
-                                    body.applicant_name, body.applicant_email,
-                                    body.applicant_year_class, body.admission_number,
-                                    body.application_date, body.parent_guardian, body.financialSummary, body.references, body.miscellaneousInformation
+                                   ...values
                               ]
                         ]
                   }

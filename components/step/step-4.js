@@ -2,6 +2,8 @@ import React from "react";
 
 class StepFour extends React.Component {
   render() {
+    const { formData, handleChange, handlePhotoChange } = this.props;
+
     return (
       <div className="multisteps-form__panel" data-animation="slideVert">
         <div className="inner pb-50">
@@ -25,8 +27,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_name_1"
+                      name="referee1Name"
                       placeholder="Name of Referee"
+                      value={formData.reference1Name}
+                      onChange={handleChange}
                     />
                     <label>Name of Referee</label>
                   </div>
@@ -35,8 +39,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_relationship_1"
+                      name="referee1Relationship"
                       placeholder="Relationship to Applicant"
+                      value={formData.reference1Name}
+                      onChange={handleChange}
                     />
                     <label>Relationship to Applicant</label>
                   </div>
@@ -45,8 +51,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_occupation_1"
+                      name="reference1Occupation"
                       placeholder="Occupation"
+                      value={formData.reference1Occupation}
+                      onChange={handleChange}
                     />
                     <label>Occupation</label>
                   </div>
@@ -55,8 +63,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_address_1"
+                      name="reference1Address"
                       placeholder="Full Address"
+                      value={formData.reference1Address}
+                      onChange={handleChange}
                     />
                     <label>Full Address</label>
                   </div>
@@ -65,8 +75,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_phone"
+                      name="reference1Phone"
                       placeholder="Phone Number"
+                      value={formData.reference1Phone}
+                      onChange={handleChange}
                     />
                     <label>Phone Number</label>
                   </div>
@@ -75,17 +87,21 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_email"
+                      name="reference1Email"
                       placeholder="Email"
+                      value={formData.reference1Email}
+                      onChange={handleChange}
                     />
                     <label>Email</label>
                   </div>
 
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
-                      name="reference_letter_1"
+                      name="reference1Letter"
                       className="form-control"
                       placeholder="Letter of Reference"
+                      value={formData.reference1Letter}
+                      onChange={handleChange}
                     ></textarea>
                     <label>Letter of Reference</label>
                   </div>
@@ -95,13 +111,14 @@ class StepFour extends React.Component {
                       <span>Signature</span>
                     </div>
                     <div className="upload-option text-center float-right">
-                      <label for="files">Upload Signature</label>
+                      <label htmlFor="files">Upload Signature</label>
                       <input
                         id="files"
                         type="file"
                         className="d-none"
-                        name="referee_signature_1"
+                        name="reference1Signature"
                         accept="image/jpg,image/png,image/jpeg"
+                        onChange={handlePhotoChange}
                       />
                     </div>
                   </div>
@@ -119,8 +136,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_name_2"
+                      name="reference2Name"
                       placeholder="Name of Referee"
+                      value={formData.reference2Name}
+                      onChange={handleChange}
                     />
                     <label>Name of Referee</label>
                   </div>
@@ -129,8 +148,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_relationship_2"
+                      name="reference2Rletionship"
                       placeholder="Relationship to Applicant"
+                      value={formData.reference2Relationship}
+                      onChange={handleChange}
                     />
                     <label>Relationship to Applicant</label>
                   </div>
@@ -139,8 +160,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_occupation_2"
+                      name="referee2Occupation"
                       placeholder="Occupation"
+                      value={formData.reference2Occupation}
+                      onChange={handleChange}
                     />
                     <label>Occupation</label>
                   </div>
@@ -149,8 +172,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_address_2"
+                      name="referee2Address"
                       placeholder="Full Address"
+                      value={formData.reference2Address}
+                      onChange={handleChange}
                     />
                     <label>Full Address</label>
                   </div>
@@ -159,8 +184,10 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_phone_2"
+                      name="reference2PhoneNumber"
                       placeholder="Phone Number"
+                      value={formData.reference2PhoneNumber}
+                      onChange={handleChange}
                     />
                     <label>Phone Number</label>
                   </div>
@@ -169,17 +196,21 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee_email_2"
+                      name="reference2Email"
                       placeholder="Email"
+                      value={formData.reference2Email}
+                      onChange={handleChange}
                     />
                     <label>Email</label>
                   </div>
 
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
-                      name="reference_letter_2"
+                      name="reference2Letter"
                       className="form-control"
                       placeholder="Letter of Reference"
+                      value={formData.reference2Letter}
+                      onChange={handleChange}
                     ></textarea>
                     <label>Letter of Reference</label>
                   </div>
@@ -189,13 +220,14 @@ class StepFour extends React.Component {
                       <span>Signature</span>
                     </div>
                     <div className="upload-option text-center float-right">
-                      <label for="files">Upload Signature</label>
+                      <label htmlFor="files">Upload Signature</label>
                       <input
                         id="files"
                         type="file"
                         className="d-none"
-                        name="referee_signature_2"
+                        name="reference2Signature"
                         accept="image/jpg,image/png,image/jpeg"
+                        onChange={handlePhotoChange}
                       />
                     </div>
                   </div>
