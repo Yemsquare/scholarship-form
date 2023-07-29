@@ -2,6 +2,8 @@ import React from "react";
 
 class StepFive extends React.Component {
   render() {
+    const { formData, handleChange, handlePhotoChange } = this.props;
+
     return (
       <div className="multisteps-form__panel" data-animation="slideVert">
         <div className="inner pb-100">
@@ -21,26 +23,32 @@ class StepFive extends React.Component {
                   </div>
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
-                      name="academic_award"
+                      name="academicAwards"
                       className="form-control"
                       placeholder="Academic Award"
+                      value={formData.academicAwards}
+                      onChange={handleChange}
                     ></textarea>
                     <label>Academic Award</label>
                   </div>
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
-                      name="price_extra"
+                      name="prizeExtra"
                       className="form-control"
-                      placeholder="Prices for Extracurricular Activities"
+                      placeholder="Prizes for Extracurricular Activities"
+                      value={formData.prizeExtra}
+                      onChange={handleChange}
                     ></textarea>
                     <label>Prices for Extracurricular Activities</label>
                   </div>
 
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
-                      name="communication"
+                      name="commendation"
                       className="form-control"
                       placeholder="Commendations/Community Service/Leadership Positions"
+                      value={formData.commendation}
+                      onChange={handleChange}
                     ></textarea>
                     <label>
                       Commendations/Community Service/Leadership Positions
@@ -63,11 +71,12 @@ class StepFive extends React.Component {
                     <div className="upload-option text-center">
                       <label htmlFor="file-images">School Transcript</label>
                       <input
-                        name="transcript"
+                        name="transcriptHistory"
                         id="file-images"
                         type="file"
                         className="d-none file-image"
-                        data-file-name="transcript"
+                        data-file-name="transcriptHistory"
+                        onChange={handlePhotoChange}
                       />
                       <span>
                         .jpg or .pdf should be more than 500KB or 300PI

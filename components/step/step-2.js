@@ -2,6 +2,8 @@ import React from "react";
 
 class StepTwo extends React.Component {
   render() {
+    const { formData, handleChange, handlePhotoChange } = this.props;
+
     return (
       <div className="multisteps-form__panel" data-animation="slideVert">
         <div className="inner pb-50">
@@ -22,8 +24,9 @@ class StepTwo extends React.Component {
                           type="radio"
                           className="identity-check"
                           defaultChecked
-                          name="guardian_m_type"
+                          name="guardian1Type"
                           value="parent"
+                          onChange={handleChange}
                         />
                         <span className="identity-label"></span> Parent
                         <span className="checkmark-border"></span>
@@ -34,8 +37,9 @@ class StepTwo extends React.Component {
                         <input
                           type="radio"
                           className="identity-check"
-                          name="guardian_m_type"
+                          name="guardian1Type"
                           value="guardian"
+                          onChange={handleChange}
                         />
                         <span className="identity-label">Guardian</span>
                         <span className="checkmark-border"></span>
@@ -47,36 +51,44 @@ class StepTwo extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="guardian_name_m"
+                      name="guardian1Name"
+                      value={formData.guardian1Name}
+                      onChange={handleChange}
                       placeholder="Mother's First, Middle and Surname"
                     />
                     <label>Mother's First, Middle and Surname</label>
                   </div>
-                  <div className="wizard-form-input position-relative form-group">
-                    <input
-                      type="date"
-                      className="form-control"
-                      name="guardian_m_dob"
-                    />
-                    {/* <label>Full Address</label> */}
-                  </div>
-
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <input
                       type="text"
                       className="form-control"
-                      name="guardian_m_occupation"
+                      name="guardian1Occupation"
                       placeholder="Mother's Occupation"
+                      value={formData.guardian1Occupation}
+                      onChange={handleChange}
                     />
                     <label>Mother's Occupation</label>
+                  </div>
+
+                  <div className="wizard-form-input position-relative form-group">
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="guardian1DateOfBirth"
+                      value={formData.guardian1DateOfBirth}
+                      onChange={handleChange}
+                    />
+                    {/* <label>Full Address</label> */}
                   </div>
 
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
                       type="text"
                       className="form-control"
-                      name="guardian_m_address"
+                      name="guardian1AddressPhone"
                       placeholder="Full Address and Phone Number (Cell or Landline)"
+                      value={formData.guardian1AddressPhone}
+                      onChange={handleChange}
                     ></textarea>
                     <label>
                       Full Address and Phone Number (Cell or Landline)
@@ -89,13 +101,15 @@ class StepTwo extends React.Component {
                       <span>Signature</span>
                     </div>
                     <div className="upload-option text-center float-right">
-                      <label for="files">Upload Signature</label>
+                      <label htmlFor="files">Upload Signature</label>
                       <input
                         id="files"
                         type="file"
                         className="d-none"
-                        name="guardian_m_signature"
+                        name="guardian1Signature"
                         accept="image/jpg,image/png,image/jpeg"
+                        // value={formData.guardian1Signature}
+                        onChange={handlePhotoChange}
                       />
                     </div>
                   </div>
@@ -109,8 +123,9 @@ class StepTwo extends React.Component {
                           type="radio"
                           className="identity-check"
                           defaultChecked
-                          name="guardian_f_type"
+                          name="guardian2Type"
                           value="parent"
+                          onChange={handleChange}
                         />
                         <span className="identity-label"></span> Parent
                         <span className="checkmark-border"></span>
@@ -121,8 +136,9 @@ class StepTwo extends React.Component {
                         <input
                           type="radio"
                           className="identity-check"
-                          name="guardian_f_type"
+                          name="guardian2Type"
                           value="guardian"
+                          onChange={handleChange}
                         />
                         <span className="identity-label">Guardian</span>
                         <span className="checkmark-border"></span>
@@ -134,8 +150,10 @@ class StepTwo extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="guardian_f_name"
+                      name="guardian2Name"
                       placeholder="Father's First, Middle and Surname"
+                      value={formData.guardian2Name}
+                      onChange={handleChange}
                     />
                     <label>Father's First, Middle and Surname</label>
                   </div>
@@ -143,8 +161,10 @@ class StepTwo extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="guardian_f_occupation"
+                      name="guardian2Occupation"
                       placeholder="Father's Occupation"
+                      value={formData.guardian2Occupation}
+                      onChange={handleChange}
                     />
                     <label>Father's Occupation</label>
                   </div>
@@ -154,7 +174,9 @@ class StepTwo extends React.Component {
                     <input
                       type="date"
                       className="form-control"
-                      name="guardian_m_dob"
+                      name="guardian2DateOfBirth"
+                      value={formData.guardian2DateOfBirth}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -162,8 +184,10 @@ class StepTwo extends React.Component {
                     <textarea
                       type="text"
                       className="form-control"
-                      name="guardian_f_address"
+                      name="guardian2AddressPhone"
                       placeholder="Full Address and Phone Number (Cell or Landline)"
+                      value={formData.guardian2AddressPhone}
+                      onChange={handleChange}
                     ></textarea>
                     <label>
                       Full Address and Phone Number (Cell or Landline)
@@ -181,8 +205,9 @@ class StepTwo extends React.Component {
                             type="radio"
                             className="identity-check"
                             defaultChecked
-                            name="guardian_alumnus"
+                            name="guardianIsAlumnus"
                             value="Yes"
+                            onChange={handleChange}
                           />
                           <span className="identity-label">Yes</span>
                           <span className="checkmark-border"></span>
@@ -193,8 +218,9 @@ class StepTwo extends React.Component {
                           <input
                             type="radio"
                             className="identity-check"
-                            name="guardian_alumnus"
+                            name="guardianIsAlumnus"
                             value="No"
+                            onChange={handleChange}
                           />
                           <span className="identity-label">No</span>
                           <span className="checkmark-border"></span>
@@ -207,8 +233,10 @@ class StepTwo extends React.Component {
                     <input
                       type="email"
                       className="form-control"
-                      name="guardian_f_email"
+                      name="guardianEmail"
                       placeholder="Email"
+                      value={formData.guardian2Email}
+                      onChange={handleChange}
                     />
                     <label>Email</label>
                   </div>
@@ -216,10 +244,15 @@ class StepTwo extends React.Component {
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
                       className="form-control"
-                      name="alumnus_yes"
+                      name="guardianAttendanceDate"
                       placeholder="If yes, Provide Dates of Attendance to Saint's Finbarr's College"
+                      value={formData.guardianAttendanceDate}
+                      onChange={handleChange}
                     />
-                    <label>If yes, Provide Dates of Attendance to Saint's Finbarr's College</label>
+                    <label>
+                      If yes, Provide Dates of Attendance to Saint's Finbarr's
+                      College
+                    </label>
                   </div>
 
                   {/* Signature */}
@@ -228,13 +261,15 @@ class StepTwo extends React.Component {
                       <span>Signature</span>
                     </div>
                     <div className="upload-option text-center float-right">
-                      <label for="files">Upload Signature</label>
+                      <label htmlFor="files">Upload Signature</label>
                       <input
                         id="files"
                         type="file"
                         className="d-none"
-                        name="guardian_m_signature"
+                        name="guardian2Signature"
                         accept="image/jpg,image/png,image/jpeg"
+                        // value={formData.guardian2Signature}
+                        onChange={handlePhotoChange}
                       />
                     </div>
                   </div>
