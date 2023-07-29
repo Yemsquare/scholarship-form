@@ -58,23 +58,18 @@ export default function V2() {
     event.preventDefault();
 
     const formDataToSend = new FormData();
-    for (const key in formData) {
-      if (formData.hasOwnProperty(key)) {
-        formDataToSend.append(key, formData[key]);
-      }
+
+    for (const [key, value] of Object.entries(formData)) {
+      formDataToSend.append(key, value);
     }
-
-    console.log(formData);
-
-    return;
 
     const response = await fetch("/api/submit", {
       method: "POST",
       headers: {
-        Accept: "application/json, multipart/data",
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formDataToSend),
+      body: JSON.stringify(formData),
     });
 
     console.log(await response.json());

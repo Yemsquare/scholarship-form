@@ -3,50 +3,50 @@ import { google } from 'googleapis'
 
 type SheetForm = {
 
-      name: String,
-      email: String,
-      dateOfBirth: String,
-      yearClass: String,
-      admissionNo: String,
-      applicationDate: String,
+      name: string,
+      email: string,
+      dateOfBirth: string,
+      yearClass: string,
+      admissionNo: string,
+      applicationDate: string,
       applicantPhoto: string,
-      guardian1Type: String,
-      guardian1Name: String,
-      guardian1DateOfBirth: String,
-      guardian1Occupation: String,
-      guardian1AddressPhone: String,
-      guardian1Signature: string,
-      guardian2Type: String,
-      guardian2Name: String,
-      guardian2DateOfBirth: String,
-      guardian2Occupation: String,
-      guardian2AddressPhone: String,
-      guardianEmail: String,
-      guardianIsAlumnus: String,
-      guardianAttendanceDate: String,
-      guardian2Signature: string,
-      guardianIncome: String,
-      applicantNeedStatement: String,
-      needSignature: string,
-      reference1Name: String,
-      reference1Relationship: String,
-      reference1Occupation: String,
-      reference1Address: String,
-      reference1PhoneNumber: String,
-      reference1PhoneEmail: String,
-      reference1Letter: String,
-      reference1Signature: String,
-      reference2Name: String,
-      reference2Relationship: String,
-      reference2Occupation: String,
-      reference2Address: String,
-      reference2PhoneNumber: String,
-      reference2PhoneEmail: String,
-      reference2Letter: String,
-      reference2Signature: string,
-      academicAwards: String,
-      prizeExtra: String,
-      commendation: String,
+      guardian1Type: string,
+      guardian1Name: string,
+      guardian1DateOfBirth: string,
+      guardian1Occupation: string,
+      guardian1AddressPhone: string,
+      guardian1Signature: Object,
+      guardian2Type: string,
+      guardian2Name: string,
+      guardian2DateOfBirth: string,
+      guardian2Occupation: string,
+      guardian2AddressPhone: string,
+      guardianEmail: string,
+      guardianIsAlumnus: string,
+      guardianAttendanceDate: string,
+      guardian2Signature: Object,
+      guardianIncome: string,
+      applicantNeedStatement: string,
+      needSignature: Object,
+      reference1Name: string,
+      reference1Relationship: string,
+      reference1Occupation: string,
+      reference1Address: string,
+      reference1PhoneNumber: string,
+      reference1PhoneEmail: string,
+      reference1Letter: string,
+      reference1Signature: Object,
+      reference2Name: string,
+      reference2Relationship: string,
+      reference2Occupation: string,
+      reference2Address: string,
+      reference2PhoneNumber: string,
+      reference2PhoneEmail: string,
+      reference2Letter: string,
+      reference2Signature: Object,
+      academicAwards: string,
+      prizeExtra: string,
+      commendation: string,
       transcriptHistory: string,
 }
 
@@ -64,14 +64,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             // prepare auth credentials
             const auth = new google.auth.GoogleAuth({
                   credentials: {
+                        client_id: process.env.GOOGLE_CLIENT_ID,
                         client_email: process.env.GOOGLE_CLIENT_EMAIL,
                         private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
                   },
 
                   scopes: [
-                        "https://www.googleapis.com/auth/drive",
-                        "https://www.googleapis.com/auth/drive.file",
-                        "https://www.googleapis.com/auth/spreadsheets",
+                        'https://www.googleapis.com/auth/drive',
+                        'https://www.googleapis.com/auth/drive.file',
+                        'https://www.googleapis.com/auth/spreadsheets'
                   ]
             });
 
@@ -80,24 +81,32 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                   version: 'v4'
             })
 
-            const values = Object.entries(body)
+            const values = [
+                  Object.values(body)
+            ]
+
+            // Check for empty or undefined values
+            // if (values.flat().some((value) => value === undefined || value === null)) {
+            //       return res.status(400).json({ message: "Form data contains empty or undefined values" });
+            // }
+
+            // Convert numbers to strings
+            const stringValues = values.map(row => row.map(value => String(value)));
+
 
             const response = await sheet.spreadsheets.values.append({
                   spreadsheetId: process.env.GOOGLE_SHEET_ID,
-                  range: "A1:K1",
+                  range: "Sheet1!A2:A",
                   valueInputOption: 'USER_ENTERED',
                   requestBody: {
-                        values: [
-                              [
-                                   ...values
-                              ]
-                        ]
+                        values: stringValues
                   }
             })
 
             return res.status(200).json({
                   data: response.data,
-                  message: 'Form submitted successfully'
+                  message: 'Form submitted successfully',
+                  values: Object.values(req.body)
             })
 
       } catch (error) {
