@@ -50,7 +50,7 @@ class StepThree extends React.Component {
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
                       type="text"
-                      name="applicantNeedStatment"
+                      name="applicantNeedStatement"
                       className="form-control"
                       placeholder="Write here"
                       value={formData.applicantNeedStatement}

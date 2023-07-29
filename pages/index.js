@@ -37,15 +37,15 @@ export default function V2() {
     reference1Occupation: "",
     reference1Address: "",
     reference1PhoneNumber: "",
-    reference1PhoneEmail: "",
+    reference1Email: "",
     reference1Letter: "",
-    reference1Signature: "",
+    reference1Signature: null,
     reference2Name: "",
     reference2Relationship: "",
     reference2Occupation: "",
     reference2Address: "",
     reference2PhoneNumber: "",
-    reference2PhoneEmail: "",
+    reference2Email: "",
     reference2Letter: "",
     reference2Signature: null,
     academicAwards: "",
@@ -63,6 +63,10 @@ export default function V2() {
         formDataToSend.append(key, formData[key]);
       }
     }
+
+    console.log(formData);
+
+    return;
 
     const response = await fetch("/api/submit", {
       method: "POST",

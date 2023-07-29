@@ -27,7 +27,7 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee1Name"
+                      name="reference1Name"
                       placeholder="Name of Referee"
                       value={formData.reference1Name}
                       onChange={handleChange}
@@ -39,9 +39,9 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee1Relationship"
+                      name="reference1Relationship"
                       placeholder="Relationship to Applicant"
-                      value={formData.reference1Name}
+                      value={formData.reference1Relationship}
                       onChange={handleChange}
                     />
                     <label>Relationship to Applicant</label>
@@ -75,9 +75,9 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="reference1Phone"
+                      name="reference1PhoneNumber"
                       placeholder="Phone Number"
-                      value={formData.reference1Phone}
+                      value={formData.reference1PhoneNumber}
                       onChange={handleChange}
                     />
                     <label>Phone Number</label>
@@ -148,7 +148,7 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="reference2Rletionship"
+                      name="reference2Relationship"
                       placeholder="Relationship to Applicant"
                       value={formData.reference2Relationship}
                       onChange={handleChange}
@@ -160,7 +160,7 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee2Occupation"
+                      name="reference2Occupation"
                       placeholder="Occupation"
                       value={formData.reference2Occupation}
                       onChange={handleChange}
@@ -172,7 +172,7 @@ class StepFour extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="referee2Address"
+                      name="reference2Address"
                       placeholder="Full Address"
                       value={formData.reference2Address}
                       onChange={handleChange}

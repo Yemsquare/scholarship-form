@@ -23,10 +23,10 @@ class StepFive extends React.Component {
                   </div>
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
-                      name="academicAward"
+                      name="academicAwards"
                       className="form-control"
                       placeholder="Academic Award"
-                      value={formData.academyAward}
+                      value={formData.academicAwards}
                       onChange={handleChange}
                     ></textarea>
                     <label>Academic Award</label>
@@ -35,7 +35,7 @@ class StepFive extends React.Component {
                     <textarea
                       name="prizeExtra"
                       className="form-control"
-                      placeholder="Prices for Extracurricular Activities"
+                      placeholder="Prizes for Extracurricular Activities"
                       value={formData.prizeExtra}
                       onChange={handleChange}
                     ></textarea>
@@ -75,7 +75,7 @@ class StepFive extends React.Component {
                         id="file-images"
                         type="file"
                         className="d-none file-image"
-                        data-file-name="transcript"
+                        data-file-name="transcriptHistory"
                         onChange={handlePhotoChange}
                       />
                       <span>

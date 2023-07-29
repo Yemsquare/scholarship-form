@@ -51,24 +51,13 @@ class StepTwo extends React.Component {
                     <input
                       type="text"
                       className="form-control"
-                      name="guardian1Type"
+                      name="guardian1Name"
                       value={formData.guardian1Name}
                       onChange={handleChange}
                       placeholder="Mother's First, Middle and Surname"
                     />
                     <label>Mother's First, Middle and Surname</label>
                   </div>
-                  <div className="wizard-form-input position-relative form-group">
-                    <input
-                      type="date"
-                      className="form-control"
-                      name="guardian1DateOfBirth"
-                      value={formData.guardian1DateOfBirth}
-                      onChange={handleChange}
-                    />
-                    {/* <label>Full Address</label> */}
-                  </div>
-
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <input
                       type="text"
@@ -79,6 +68,17 @@ class StepTwo extends React.Component {
                       onChange={handleChange}
                     />
                     <label>Mother's Occupation</label>
+                  </div>
+
+                  <div className="wizard-form-input position-relative form-group">
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="guardian1DateOfBirth"
+                      value={formData.guardian1DateOfBirth}
+                      onChange={handleChange}
+                    />
+                    {/* <label>Full Address</label> */}
                   </div>
 
                   <div className="wizard-form-input position-relative form-group has-float-label">
@@ -233,7 +233,7 @@ class StepTwo extends React.Component {
                     <input
                       type="email"
                       className="form-control"
-                      name="guardian2Email"
+                      name="guardianEmail"
                       placeholder="Email"
                       value={formData.guardian2Email}
                       onChange={handleChange}
@@ -244,7 +244,7 @@ class StepTwo extends React.Component {
                   <div className="wizard-form-input position-relative form-group has-float-label">
                     <textarea
                       className="form-control"
-                      name="alumnus_yes"
+                      name="guardianAttendanceDate"
                       placeholder="If yes, Provide Dates of Attendance to Saint's Finbarr's College"
                       value={formData.guardianAttendanceDate}
                       onChange={handleChange}
