@@ -6,6 +6,8 @@ import Step4 from "../components/step/step-4";
 import Step5 from "../components/step/step-5";
 
 export default function V2() {
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,14 +56,34 @@ export default function V2() {
     transcriptHistory: null,
   });
 
+  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const formDataToSend = new FormData();
 
+    // console.log("data",formData);
+
     for (const [key, value] of Object.entries(formData)) {
       formDataToSend.append(key, value);
+      if (
+        key === "applicantPhoto"
+      )
+      console.log(value);
     }
+
+
+
+    const uploadResponse = await fetch("/api/upload",{
+      method: "POST",
+      body: formData,
+    });
+
+    console.log("data succesfully processed", uploadResponse);
+
+
+
 
     const response = await fetch("/api/submit", {
       method: "POST",
@@ -75,6 +97,7 @@ export default function V2() {
     console.log(await response.json());
   };
 
+   
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({

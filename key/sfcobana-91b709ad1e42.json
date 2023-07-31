@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sfcobana",
+  "private_key_id": "91b709ad1e42a7eb978064b7c2289cd42bdf0aad",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCKZQiuO30o19zu\nQ+Ht42aePY6rAtN/13Nej6MpdgRA2J8kb5T1+tMljiSvVflFzoHW6IjMn3dVEiSm\nvsNE47Y33J9M49MkaHc81r0HRPv004pOwtAPN4eEsOj3xXqNN71p8nnuSmc9Mxeb\nosm8fc8Uci1i+00zhjuO0JELt21qnMOM2gafFb2A1CKOClanDgbIXvJLLmEGQiYe\nxVwujB33yi5VK+DWk9Ekkw0FYj6QhouHlOx9kckSrLdxK8Tck1mPsWFzgvAw8Vha\niuUriEBxvHUY4MIZYKh2XtCGZm11gxSnOpdtjxygxJSRTxPCyBCi0IBxBJNQdvJu\nbAU/CQx7AgMBAAECggEAQOWX6Hwk+N4gz+otK+yS1mlvWWn929kgVJtum6an3/C0\nz9UzORXhpZ6+PSpHtiBcanaoj6vHvbDAVyDlWIyfihp+6QN8o3oJUBIymhITRH9e\nQAjCoCAeAG8lD+seyNH2lJQL8V4ag2xOCcGQcD9et+vCtMO7NAoiK5pKKgBd4rvn\npMEmh42Qdsn2BvlwN82HGf5B/EHJWOOGad/Td4RbznVTOPyzZvlFwk5iS3cvbeHk\n84khR7rkr1as0UEvwBumc1VhqRn3AKZ/y8w8vDMZaIitqyvxNOoy68WiZdG4GK0X\nyQ0PMkE0wqRUcI8Ch/v9sSrxmAKHsdsFHlaFMqIp4QKBgQDCzQ0JQbzcSZd68lcT\nbqkq/TxkKDGbut2Dhbig4o/y6Dxwc8j5i14JIF+WzNtz82Wl656loQAbnS3tcbcI\nnBn3+q32QK/AolHeJLmQ/g5xEQ4+6E8HIwLw13gQFUwryjhPDW3xqT/ulzBtZYpG\nIGtitLYUZ+DuMuReWpxEPGgzlwKBgQC133tT27r5gNrJQQG9GH3ssN4D+D1D9MDF\nigl0fyIXpRX5eKC+JVpCzid+qzPmU9ASUCydjcxib7PvBG/2UYF9ckL8Ujc+7egU\nIYZ8qH7tkaTdF6piW0PUKOjVNHVnqupn2lV1bL16cTIh3ZqYEEPGcbaSQ0g7r9N+\ntS9SC0N6vQKBgBuZO4CVPLGlB34WuXl6UyNRD25NN4INvnZ0yoyYrLZIas+vx8h7\nE06NtJ1D1s+dq0gPksF6hu5inXAnjTv+CbvVWzIpRf0vwhOL9nJxXBBuzyrgdNnY\n/wCqNktpCQqnMsUYbPww82rVJrpJCYcX7r7kRWusr/RvZ2Vqxvrv5/9vAoGAZcTn\n/cS2m2a/Bl6Z2nYaAJf3o8EEh0ItnFvhbo61RQXbhf059SxxlXBGKVsjb372r0it\nrnvqIirfRJ/3Bp4VF10Ynphi0ZPOiXU5DAg8/jLBTfYwIVlwWweJQcRY7el1wScr\nKsnuPNWad9jI6M4xHpoCz1VW1g9NCVnZYM9sswECgYAeErUnyCke+QLPc2S3w/7x\nCBl22XDU/BVNUgkZoXg8zuTmyNBwhqCxQkT4vcUxDTNPI/Aps6pNVDoOOwaKn2Nn\n9DdRx+fNB5d6HsavhvGVMDLcZm77KUR81Xsyf2Ryk1BHJph3nc0axuoiVtpVwC9f\nCk/1DT3RGthv1v6zPerCxQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "scholarship-form@sfcobana.iam.gserviceaccount.com",
+  "client_id": "102443714648336292871",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/scholarship-form%40sfcobana.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

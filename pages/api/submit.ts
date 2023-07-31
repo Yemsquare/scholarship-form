@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { google } from 'googleapis'
+import { google } from 'googleapis';
+import nodemailer from 'nodemailer';
 
 type SheetForm = {
 
@@ -108,6 +109,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                   message: 'Form submitted successfully',
                   values: Object.values(req.body)
             })
+
+            // //send smtp 
+            // const nodemailer = require('nodemailer');
+            // //create transporter object using your email
+            // const transporter = nodemailer.createTransport({
+            //       service: 'mail.google.com',
+            //       auth:{
+            //             user: 'webtest@sfcobanorthamerica.org',
+            //             pass: 'Miracle@6',
+            //       },
+            // });
+
+            // //to send the email
+            // const sendEmail = async (formData) => {
+            //       try {
+            //             //compose the email message
+            //             const message = {
+            //                   from: 'webtest@sfcobanorthamerica.org',
+            //                   to: ['schorlarship@sfcobanorthamerica.org',formData.email],
+            //                   subject: 'SFCO Application Form',
+            //                   Text: `A new form has been submittted with the following data:\n\n${JSON.stringify(formData, null, 2)}`,
+            //             };
+            //       }
+            // }
 
       } catch (error) {
             return res.status(500).send({ message: error.message ?? 'Something went wrong' })

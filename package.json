@@ -7,9 +7,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "formidable": "^3.5.0",
     "googleapis": "^123.0.0",
     "jquery": "^3.6.3",
+    "multer": "^1.4.5-lts.1",
     "next": "latest",
+    "nodemailer": "^6.9.4",
+    "puppeteer": "^20.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
